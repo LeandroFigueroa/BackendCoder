@@ -1,12 +1,11 @@
 body{
-    font-family: sans-serif;
-    background-color: #121212;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #chat-container{
     max-width: 600px;
     margin: 30px auto;
     border: 1px solid #ddd;
-    box-shadow: 1px 3px 5px aliceblue;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, .5);
 }
 #chat-window{
     padding: 14px 0; 
@@ -44,5 +43,5 @@ button{
     cursor: pointer;
 }
 button:hover{
-    background: skyblue;
+    background: #1ed106;
 }

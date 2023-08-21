@@ -1,7 +1,4 @@
 import { productsModel } from "./models/productsModel.js";
-import { cartModel } from "./models/cartModel.js";
-
-
 
 export default class ProductsDaoMongoDB {
   async getAllProducts(query, page = 1, limit = 10, sort = 1) {

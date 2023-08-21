@@ -1,6 +1,5 @@
 import fs from "fs";
 
-//los objetos deben tener id, title,description, code,number,price, status(true por defecto), stock,category,thumbnail
 export default class ProductsDaoFs {
   constructor(path) {
     this.path = path;

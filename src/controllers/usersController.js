@@ -44,7 +44,7 @@ export const githubResponse = async (req,res,next)=>{
     try {
         const{first_name, last_name, email, role, isGithub}= req.user;
         res.json({
-            msg:'registro/login Github correcto!',
+            msg:'registro/login Github ✅',
             session: req.session,
             userData:{
                 first_name,

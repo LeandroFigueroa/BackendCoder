@@ -1,5 +1,11 @@
-export const errorHandler =(error, req, res , next)=>{
-    console.log(`error ${error.message}`)
-    const status =error.status || 400
-    res.status(status).send(error.message)
-}
+import { HttpResponse } from "../utils/httpResponse.js";
+
+const httpResponse = new HttpResponse();
+export const errorHandler = (error, req, res, next) => {
+  console.log(`error ${error.message}`);
+  const status = error.statusCode || 500;
+  res.status(status).send({
+    error: error.name,
+    message: error.message,
+  });
+};

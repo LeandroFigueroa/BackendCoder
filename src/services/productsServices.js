@@ -1,8 +1,12 @@
 import factory from "../daos/factory.js"
-const { productManager }= factory;
-import productRepository from "../daos/repository/productsRepository.js";
-const prodDao= new productRepository();
 
+import productRepository from "../daos/repository/productsRepository.js";
+import { generateProducts } from "../test/productsFaker.js";
+import { productsModel } from "../daos/mongodb/models/productsModel.js";
+
+
+const prodDao= new productRepository();
+const { productManager }= factory;
 
 export const getAllService = async (query,page, limit,sort)=>{
     try {
@@ -34,7 +38,7 @@ export const updateService = async (id, obj)=>{
     try {
         const doc = await prodDao.getProductById(id);
         if (!doc){
-            throw new Error ('Producto not found');
+            throw new Error ('Producto not found')
         } else {
             const prodUpt = await prodDao.updateProduct(id,obj)
             return prodUpt;
@@ -52,4 +56,18 @@ export const deleteService = async (id)=>{
         console.log(error)
     }
 
+}
+
+
+export const createProductMock =async (quantity=50)=>{
+    const productArray=[];
+    for (let i=0;i<quantity;i++ ){
+        const product = generateProducts();
+        productArray.push(product)
+    };
+    console.log('BEFORE Modelservice................................................................')
+    const productsmok = await productsModel.create(productArray)
+    console.log('AFTER Modelservice................................................................')
+
+    return productsmok
 }

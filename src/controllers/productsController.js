@@ -4,8 +4,10 @@ import {
     createService,
     updateService,
     deleteService,
-    
+    createProductMock,
 } from "../services/productsServices.js"
+import { HttpResponse } from "../utils/httpResponse.js"
+const httpResponse = new HttpResponse()
 
 export const getAllProductsController = async (req, res, next) =>{
     try {
@@ -80,3 +82,12 @@ export const deleteProductController = async (req, res, next) =>{
     }
 }
 
+export const createProductMockController = async (req,res,next) =>{
+    const {quantity}=req.query
+     try {
+         const response = await createProductMock(quantity);
+         return httpResponse.Ok(res, response)
+     } catch (error) {
+         next(error)
+     }
+ }

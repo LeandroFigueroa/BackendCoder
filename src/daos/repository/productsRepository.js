@@ -26,7 +26,6 @@ export default class productRepository{
         let prod= this.dao.deleteProduct(id);
         return prod
     }
-    addProduct
 }
 
 
