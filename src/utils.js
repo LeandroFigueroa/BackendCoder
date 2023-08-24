@@ -1,7 +1,35 @@
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import bcrypt from 'bcrypt'
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import bcrypt from "bcrypt";
 
-export const createHash = password => bcrypt.hashSync(password, bcrypt.genSaltSync())
-export const isValidPass = (user, password)=> bcrypt.compareSync(password, user.password)
-export const __dirname = dirname(fileURLToPath(import.meta.url))
+
+/**
+ * funcion que realiza el encriptado de contraseña a través de bcrypt con el método hashSync. 
+ * Recibe password sin encriptar,
+ * retorna password encriptada
+ * @param password tipo string
+ * @returns password encriptada/hasheada
+ */
+export const createHash = password => bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+
+/**
+ * 
+ * @param {*} user usuario encontrado en base de datos.
+ * @param {*} password contraseña proporcionada por el usuario, sin encriptar.
+ * @returns boolean
+ */
+export const isValidPass = (user, password) => bcrypt.compareSync(password, user.password);
+
+
+export const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// response
+export const createResponse = (res, statusCode, data) => {
+    return res.status(statusCode).json({data})
+};
+
+// uuid
+import { v4 as uuidv4 } from 'uuid'
+export const generateCodeTicket = () =>{
+    return uuidv4();
+};

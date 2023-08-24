@@ -7,7 +7,7 @@ export const generateProducts =()=>{
         
         name:faker.commerce.productName(),
         description: faker.commerce.productDescription(),
-        price: 200,
-        quantity: 10,
+        price:  faker.number.int({ max: 10000, min:4000}),
+        quantity:  faker.number.int({ max:15, min:2 }),
     };
 }

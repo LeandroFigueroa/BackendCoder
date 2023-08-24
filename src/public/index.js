@@ -44,7 +44,7 @@ socket.on('messages', (data)=>{
 
 socket.on('newUser', (user)=>{
     Toastify({
-        text: `✅ ${user} is logged in`,
+        text: `✅ ${user} is logueado en el chat`,
         duration: 3000,
         gravity: 'top',
         position: 'right',

@@ -1,7 +1,7 @@
 import factory from "../daos/factory.js"
 
 import productRepository from "../daos/repository/productsRepository.js";
-import { generateProducts } from "../test/productsFaker.js";
+import { generateProducts } from "../utils/productsFaker.js";
 import { productsModel } from "../daos/mongodb/models/productsModel.js";
 
 

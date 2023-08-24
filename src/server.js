@@ -40,7 +40,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
-app.set("views", __dirname + "/views");
+app.set("views", __dirname+ "/views");
 
 app.use(
   session({
@@ -83,20 +83,20 @@ const httpServer = app.listen(PORT, () => {
 const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {
-  console.log("✅ Nueva conexion activa!", socket.id);
+  logger.info("✅ Nueva conexion activa!", socket.id);
 
   socketServer.emit("messages", await allMsgController());
 
   socket.on("disconnect", () => {
-    console.log("🚫 Usuario fuera!");
+    logger.silly("🚫 Usuario fuera!");
   });
 
   socket.on("newUser", (user) => {
-    console.log(`${user} Estas logueado`);
+    logger.silly(`${user} Estas logueado`);
   });
 
   socket.on("chat:message", isUser, async (msg) => {
-    console.log(msg);
+    logger.silly(msg);
     await createMsgService(msg);
     socketServer.emit("messages", await allMsgService());
   });
