@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import bcrypt from "bcrypt";
 
 
+
 /**
  * funcion que realiza el encriptado de contraseña a través de bcrypt con el método hashSync. 
  * Recibe password sin encriptar,
@@ -23,13 +24,5 @@ export const isValidPass = (user, password) => bcrypt.compareSync(password, user
 
 export const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// response
-export const createResponse = (res, statusCode, data) => {
-    return res.status(statusCode).json({data})
-};
 
-// uuid
-import { v4 as uuidv4 } from 'uuid'
-export const generateCodeTicket = () =>{
-    return uuidv4();
-};
+

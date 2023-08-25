@@ -5,7 +5,7 @@ export function isAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user.role === "admin") {
     return next();
   }
-  res.status(403).send("🚫 Acceso denegado");
+  res.status(403).send("🚫 Acceso denegado!!!");
 }
 export async function isUser(req, res, next) {
   if (req.isAuthenticated() && req.user.role == "user") {

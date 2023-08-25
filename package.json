@@ -1,7 +1,6 @@
 {
   "name": "login",
   "version": "1.0.0",
-  "description": "",
   "main": "./src/server.js",
   "type": "module",
   "scripts": {
@@ -37,5 +36,14 @@
   },
   "devDependencies": {
     "handlebars": "^4.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeandroFigueroa/BackendCoder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeandroFigueroa/BackendCoder/issues"
+  },
+  "homepage": "https://github.com/LeandroFigueroa/BackendCoder#readme",
+  "description": ""
 }

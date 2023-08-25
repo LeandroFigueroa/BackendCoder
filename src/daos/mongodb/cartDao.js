@@ -1,5 +1,7 @@
 import { cartModel } from "./models/cartModel.js";
 import { productsModel } from "./models/productsModel.js";
+
+
 export default class CartDao {
   async getCarts() {
     try {

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const usersSchema = new mongoose.Schema({
   first_name: {
@@ -17,6 +17,7 @@ const usersSchema = new mongoose.Schema({
   age: {
     type: Number,
     required: true,
+    default: 0
   },
   password: {
     type: String,
@@ -24,8 +25,13 @@ const usersSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    default: "user",
+    default: 'user'
   },
-});
+  isGithub: {
+    type: Boolean,
+    required: true,
+    default: false
+  }
+})
 
-export const userModel = mongoose.model("Users", usersSchema);
+export const userModel = mongoose.model('Users',usersSchema)
