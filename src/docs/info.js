@@ -4,7 +4,7 @@ export const info ={
         info:{
             title: 'Api Ecommerce',
             version:'1.0.0',
-            description:'tecnologias: Node, express, mongoDb'
+            description:'Tech by Node, express, mongoDb'
         },
         servers:[
             {
