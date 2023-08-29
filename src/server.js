@@ -24,11 +24,18 @@ import dotenv from "dotenv";
 import { isUser } from "./middlewares/authVerification.js";
 import emailRouter from "./routes/emailRouter.js";
 import { logger } from './utils/logger.js';
+import swaggerUI from 'swagger-ui-express';
+import swaggerJSDoc from 'swagger-jsdoc';
+import { info } from './docs/info.js';
+
 
 
 dotenv.config();
 
 const app = express();
+
+const specs = swaggerJSDoc(info);
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs));
 
 
 app.use(cookieParser());

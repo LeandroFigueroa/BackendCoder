@@ -1,0 +1,83 @@
+components:
+  schema:
+    products:
+      GetAllProducts:
+        type: object
+        properties:
+          payload: 
+            type: array
+            description: Todos los productos
+            items:
+               type: object
+               properties:
+                  nombre:
+                   type: string
+                   description: Product number
+                   example: Producto X
+                  precio:
+                   type: number
+                   description: Su precio es
+                   example: 200
+                  stock: 
+                    type: number
+                    description: stock
+                    example: 100
+          info: 
+            type: object
+            description: Pagina y links
+            properties:
+              pages:
+                type: number
+                desciption: Page number
+                example: 8
+              nextLink:
+                type: string
+                description: Next page
+                example: http://localhost:8080/products?page=2
+              prevLink:
+                type: string
+                description: Prev page
+                example: null
+      Product:
+        type: object
+        properties:
+          nombre:
+            type: string
+            description: Product name          
+          precio:
+            type: number
+            description: Valor
+          stock:
+            type: number
+            description: Stock 
+        example:
+          nombre: Producto X
+          precio: 499
+          stock: 60
+      ErrorGetById:
+        type: object
+        properties: 
+          message:
+            type: string
+            descripton: Product not found
+          example: 
+            message: Product not found
+    carts:
+      Cart:
+        type: object
+        properties:
+          products:
+            type: array
+            description: Cart of products
+          _id: Mongo ID
+          createdAt: Date created
+          updatedAt: Date updated
+          _v: Value
+        example:
+          products: []
+          _id: 567857639
+          cratedAt: 2023-08-29T16:10:40.724Z
+          updatedat: 2023-08-29T16:10:40.724Z
+
+
+        
