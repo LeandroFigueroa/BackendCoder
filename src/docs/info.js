@@ -2,7 +2,7 @@ export const info ={
     definition:{
         openapi:'3.0.0',
         info:{
-            title: 'Api Ecommerce',
+            title: 'Backend Coderhouse Leandro Figueroa',
             version:'1.0.0',
             description:'Tech by Node, express, mongoDb'
         },

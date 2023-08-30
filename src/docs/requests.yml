@@ -22,7 +22,7 @@ components:
           quantity:
             type: number
             description: Stock quantity
-          Owner:
+          owner:
             type: string
             description: Id property for owner of the product
         example:
