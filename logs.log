@@ -182,3 +182,4 @@
 {"level":"warn","message":"mensaje con nivel warn"}
 {"level":"error","message":"mensaje con nivel error"}
 {"level":"info","message":"👌 server ok en port by Winston"}
+{"level":"info","message":"✅ Nueva conexion activa!"}
